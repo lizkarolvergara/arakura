@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    viteImagemin({
+    /*viteImagemin({
       gifsicle: { optimizationLevel: 7 },
       mozjpeg: { quality: 75 },
       pngquant: { quality: [0.6, 0.8] },
       webp: { quality: 75 },
-    }),
+    }),*/
   ],
 })
