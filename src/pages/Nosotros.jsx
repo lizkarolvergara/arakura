@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Nosotros() {
   return (
     <section id="nosotros" className="py-24 px-6 bg-[#2d4a35]">
@@ -37,12 +39,12 @@ export default function Nosotros() {
               auténticos, identidad regional y una experiencia gastronómica que conecta
               con el origen.
             </p>
-            <a
-              href="#productos"
-              className="self-start text-[#7ecfb8] text-xs tracking-[0.2em] uppercase font-display font-semibold border-b border-[#7ecfb8]/40 pb-1 hover:border-[#7ecfb8] transition-colors duration-200 no-underline mt-2"
+            <Link 
+              to="/productos" className="self-start ..."
             >
-              Descubre nuestros productos →
-            </a>
+                Descubre nuestros productos →
+            </Link>
+
           </div>
 
           {/* Misión y Visión */}

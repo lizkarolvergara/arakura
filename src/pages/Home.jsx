@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Home() {
   return (
     <section
@@ -36,12 +38,10 @@ export default function Home() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="#productos"
-            className="bg-[#7ecfb8] text-[#2d4a35] px-10 py-3.5 text-xs tracking-[0.25em] uppercase font-display font-bold hover:bg-white transition-colors duration-200 no-underline w-full sm:w-auto text-center"
-          >
-            Ver productos
-          </a>
+          <Link 
+            to="/productos" className="bg-[#7ecfb8] ...">
+              Ver productos
+          </Link>
           <a
             href="https://wa.me/51917705184"
             target="_blank"
@@ -50,12 +50,6 @@ export default function Home() {
           >
             Pedir por WhatsApp
           </a>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-          <div className="w-px h-12 bg-white" />
-          <span className="text-white text-[9px] tracking-[0.3em] uppercase font-display">scroll</span>
         </div>
 
       </div>
