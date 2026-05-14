@@ -30,13 +30,12 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="flex items-baseline gap-2 no-underline">
-          <span className="font-display text-[#7ecfb8] text-xl font-bold tracking-[0.15em] uppercase">
-            Arakura
-          </span>
-          <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase hidden sm:block font-display font-light">
-            charcutería amazónica
-          </span>
+        <Link to="/" className="flex items-center no-underline">
+          <img
+            src="/assets/logo-verde.png"
+            alt="Arakura"
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Links desktop */}

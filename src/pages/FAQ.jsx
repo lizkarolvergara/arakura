@@ -31,15 +31,25 @@ function FAQItem({ pregunta, respuesta }) {
         <span className="font-display text-sm tracking-[0.1em] uppercase text-white/80 group-hover:text-[#7ecfb8] transition-colors duration-200">
           {pregunta}
         </span>
-        <span className={`text-[#7ecfb8] text-lg ml-4 transition-transform duration-300 ${abierto ? "rotate-45" : ""}`}>
+        <span
+          className={`text-[#7ecfb8] text-lg ml-4 transition-transform duration-300 ${abierto ? "rotate-45" : ""}`}
+        >
           +
         </span>
       </button>
-      {abierto && (
-        <p className="text-white/60 text-sm font-body leading-relaxed pb-6 max-w-2xl">
-          {respuesta}
-        </p>
-      )}
+
+      {/* Contenedor animado con grid-rows */}
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          abierto ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="text-white/60 text-sm font-body leading-relaxed pb-6 max-w-2xl">
+            {respuesta}
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
