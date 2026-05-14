@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const links = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Productos", href: "#productos" },
-  { label: "Preguntas", href: "#preguntas" },
-  { label: "Medios", href: "#medios" },
-  { label: "Galería", href: "#galeria" },
+  { label: "Inicio", to: "/" },
+  { label: "Nosotros", to: "/nosotros" },
+  { label: "Productos", to: "/productos" },
+  { label: "Preguntas", to: "/preguntas" },
+  { label: "Medios", to: "/medios" },
+  { label: "Galería", to: "/galeria" },
 ]
 
 export default function Navbar() {
@@ -29,25 +30,25 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <a href="#inicio" className="flex items-baseline gap-2 no-underline">
+        <Link to="/" className="flex items-baseline gap-2 no-underline">
           <span className="font-display text-[#7ecfb8] text-xl font-bold tracking-[0.15em] uppercase">
             Arakura
           </span>
           <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase hidden sm:block font-display font-light">
             charcutería amazónica
           </span>
-        </a>
+        </Link>
 
         {/* Links desktop */}
         <ul className="hidden md:flex items-center gap-7 list-none">
           {links.map(link => (
-            <li key={link.href}>
-            <a  
-                href={link.href}
+            <li key={link.to}>
+              <Link
+                to={link.to}
                 className="text-white/75 hover:text-[#7ecfb8] text-xs tracking-[0.15em] uppercase transition-colors duration-200 no-underline font-display font-light"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
@@ -75,14 +76,14 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-[#2d4a35]/98 px-6 pb-6 flex flex-col gap-4">
           {links.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
+            <Link
+              key={link.to}
+              to={link.to}
               onClick={() => setOpen(false)}
               className="text-white/80 text-sm py-2 border-b border-[#7ecfb8]/15 no-underline font-display tracking-[0.1em] uppercase"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="https://wa.me/51917705184"

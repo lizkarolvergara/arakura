@@ -1,14 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Nosotros from "./components/Nosotros"
+import Home from "./pages/Home"
+import Nosotros from "./pages/Nosotros"
+import Productos from "./pages/Productos"
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <Hero />
-      <Nosotros />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/productos" element={<Productos />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
